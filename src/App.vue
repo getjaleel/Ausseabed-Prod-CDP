@@ -11,14 +11,13 @@
       <button @click="signOut">Sign Out</button>
     </template>
   </authenticator>
-  <amplify-confirm-sign-up
-    [handleSubmit]="onConfirmSignUp"
-    slot="confirm-sign-up"
-    usernameAlias="email"
-    confirmSignUp="NO CODE WILL BE SEND PLEASE IGNORE"
-    headerText="Your access needs Administrators approval"
-  >
-  </amplify-confirm-sign-up>
+  <amplify-authenticator>
+    <amplify-confirm-sign-up
+      headerText="Your access needs Administrators approval"
+      slot="confirm-sign-up"
+    >
+    </amplify-confirm-sign-up>
+  </amplify-authenticator>
 </template>
 
 <script setup>
