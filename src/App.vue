@@ -15,7 +15,7 @@
     [handleSubmit]="onConfirmSignUp"
     slot="confirm-sign-up"
     usernameAlias="email"
-    
+    confirmSignUp="NO CODE WILL BE SEND PLEASE IGNORE"
     headerText="Your access needs Administrators approval"
   >
   </amplify-confirm-sign-up>
