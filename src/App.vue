@@ -15,7 +15,7 @@
     [handleSubmit]="onConfirmSignUp"
     slot="confirm-sign-up"
     usernameAlias="email"
-    [formFields]="Your access "
+    
     headerText="Your access needs Administrators approval"
   >
   </amplify-confirm-sign-up>
