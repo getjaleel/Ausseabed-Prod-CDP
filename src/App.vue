@@ -4,29 +4,80 @@
   <authenticator
     :services="services"
     initial-state="signIn"
+    :form-fields="formFields"
     :sign-up-attributes="['email', 'username', 'nickname']"
   >
+    
+    
     <template v-slot="{ user, signOut }">
       <h1>Hello {{ user.username }}!</h1>
+      <div>
+        <h1>You will recieve an email with link for instructions to follow</h1>
+      </div>
       <button @click="signOut">Sign Out</button>
     </template>
+    <template v-slot:confirm-sign-up-header>
+      <h3
+        class="amplify-heading"
+        style="padding: var(--amplify-space-xl) 0 0 var(--amplify-space-xl) color: red"
+      >
+        NO CODE IS SENT OUT
+      </h3>
+    </template>
+    
+    <template v-slot:confirm-sign-up-footer>
+      <div style="padding: var(--amplify-space-large); text-align: center">
+      <p class="amplify-text" style="color: var(--amplify-colors-red-80)">
+      Please Close This Page.
+      </p>
+      </div>
+    </template>
+    
   </authenticator>
-  <amplify-authenticator>
-    <amplify-confirm-sign-up
-      headerText="Your access needs Administrators approval"
-      slot="confirm-sign-up"
-    >
-    </amplify-confirm-sign-up>
-  </amplify-authenticator>
+
+ 
 </template>
+
+
+
 
 <script setup>
 import { onMounted } from "vue";
-import { Authenticator } from "@aws-amplify/ui-vue";
+import {
+  Authenticator,
+  AuthenticatorSignUpFormFields,
+} from "@aws-amplify/ui-vue";
 
 import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "./aws-exports";
 Amplify.configure(awsconfig);
+const formFields = {
+  signIn: {
+    username: {
+      labelHidden: false,
+      placeholder: "firstname.lastname",
+      isRequired: true,
+      label: "Username [ lower case ]",
+    },
+  },
+  signUp: {
+    username: {
+      labelHidden: false,
+      placeholder: "firstname.lastname",
+      isRequired: true,
+      label: "Username",
+    },
+  },
+  
+  confirmSignUp: {
+    confirmation_code: {
+      labelHidden:false,
+      label: "NO CODE IS SENT OUT, WATCH OUT FOR THE APPROVAL EMAIL IN YOUR INBOX AND PROCEED TO SIGN IN PAGE WITH SET CREDENTIALS",
+      placeholder: "NO CODE HERE!!",
+      isRequired: false,
+    },
+  },
+};
 
 const services = {
   async handleSignUp(formData) {
