@@ -1,6 +1,6 @@
 <template>
   <img src="/banner.svg" style="width: 100%" />
-  <img src="/logo.png" style="margin-bottom: 20px" />
+  <img src="/Logo.png" style="margin-bottom: 20px" />
   <authenticator
     :services="services"
     initial-state="signIn"
@@ -28,7 +28,7 @@
     <template v-slot:confirm-sign-up-footer>
       <div style="padding: var(--amplify-space-large); text-align: center">
       <p class="amplify-text" style="color: var(--amplify-colors-red-80)">
-      Please Close This Page.
+      <button @click="closeWindow()">Close Window</button>
       </p>
       </div>
     </template>
@@ -37,7 +37,7 @@
       <div style="padding: var(--amplify-space-large); text-align: justify">
         <p class="amplify-text" style="color: var(--amplify-colors-red-60) ;font-size: var(--amplify-font-sizes-small)">
           * Password Requirments: Minimum 8 characters in length and containing at least, 1 Uppercase, 1 Lowercase, 1 Special character 
-        </p>
+        </p> 
       </div>
     </template>
     
@@ -80,7 +80,7 @@ const formFields = {
   confirmSignUp: {
     confirmation_code: {
       labelHidden:false,
-      label: "NO CODE IS SENT OUT, WATCH OUT FOR THE APPROVAL EMAIL IN YOUR INBOX AND PROCEED TO SIGN IN PAGE WITH SET CREDENTIALS",
+      label: "WATCH OUT FOR THE APPROVAL EMAIL IN YOUR INBOX AND PROCEED TO SIGN IN PAGE WITH SET CREDENTIALS.CLICK ON THE CLOSE WINDOW BUTTON BELOW",
       placeholder: "NO CODE HERE!!",
       isRequired: false,
     },
@@ -114,6 +114,11 @@ window.addEventListener("click", function () {
   document.getElementsByTagName("input")[4].placeholder = "Organization";
   document.getElementsByTagName("label")[4].innerText = "Organization";
 });
+
+function closeWindow() {
+        window.open('','_parent','');
+        window.close();
+    };
 </script>
 
 <style>
