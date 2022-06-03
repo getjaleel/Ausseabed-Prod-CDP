@@ -19,7 +19,7 @@
     <template v-slot:confirm-sign-up-header>
       <h3
         class="amplify-heading"
-        style="padding: var(--amplify-space-xl) 0 0 var(--amplify-space-xl) color: red"
+        style="padding: var(--amplify-space-xl) 0 0 var(--amplify-space-xl); color: red"
       >
         NO CODE IS SENT OUT
       </h3>
@@ -30,6 +30,14 @@
       <p class="amplify-text" style="color: var(--amplify-colors-red-80)">
       Please Close This Page.
       </p>
+      </div>
+    </template>
+  
+    <template v-slot:sign-up-footer>
+      <div style="padding: var(--amplify-space-large); text-align: justify">
+        <p class="amplify-text" style="color: var(--amplify-colors-red-60) ;font-size: var(--amplify-font-sizes-small)">
+          * Password Requirments: Minimum 8 characters in length and containing at least, 1 Uppercase, 1 Lowercase, 1 Special character 
+        </p>
       </div>
     </template>
     
