@@ -1,6 +1,6 @@
 <template>
   <img src="/banner.svg" style="width: 100%" />
-  <img src="/Logo.png" style="margin-bottom: 20px" />
+  <img src="/logo.png" style="margin-bottom: 20px" />
   <authenticator
     :services="services"
     initial-state="signIn"
