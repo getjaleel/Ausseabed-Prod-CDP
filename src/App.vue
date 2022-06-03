@@ -28,7 +28,7 @@
     <template v-slot:confirm-sign-up-footer>
       <div style="padding: var(--amplify-space-large); text-align: center">
       <p class="amplify-text" style="color: var(--amplify-colors-red-80)">
-      <button @click="closeWindow()">Close Window</button>
+      <button @click="signInButton()">Return to Sign In</button>
       </p>
       </div>
     </template>
@@ -36,7 +36,7 @@
     <template v-slot:sign-up-footer>
       <div style="padding: var(--amplify-space-large); text-align: justify">
         <p class="amplify-text" style="color: var(--amplify-colors-red-60) ;font-size: var(--amplify-font-sizes-small)">
-          * Password Requirments: Minimum 8  and Max 12 characters in length and containing at least, 1 Uppercase, 1 Lowercase, 1 Number, & 1 Special character 
+          * Password Requirments: Minimum 8 characters in length and containing at least, 1 Uppercase, 1 Lowercase, 1 Special character 
         </p> 
       </div>
     </template>
@@ -80,7 +80,7 @@ const formFields = {
   confirmSignUp: {
     confirmation_code: {
       labelHidden:false,
-      label: "WATCH OUT FOR THE APPROVAL EMAIL IN YOUR INBOX AND PROCEED TO SIGN IN PAGE WITH SET CREDENTIALS.CLICK ON THE CLOSE WINDOW BUTTON BELOW",
+      label: "WATCH OUT FOR THE APPROVAL EMAIL IN YOUR INBOX AND PROCEED TO SIGN IN PAGE WITH SET CREDENTIALS.CLICK ON RETURN TO SIGN IN BUTTON BELOW",
       placeholder: "NO CODE HERE!!",
       isRequired: false,
     },
@@ -115,10 +115,11 @@ window.addEventListener("click", function () {
   document.getElementsByTagName("label")[4].innerText = "Organization";
 });
 
-function closeWindow() {
-        window.open('','_parent','');
-        window.close();
-    };
+function signInButton() {
+    window.open('https://www.datasubmission.ausseabed.gov.au/', '_self', '');
+    window.close();
+    
+ };
 </script>
 
 <style>
