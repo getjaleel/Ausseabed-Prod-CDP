@@ -36,7 +36,7 @@
     <template v-slot:sign-up-footer>
       <div style="padding: var(--amplify-space-large); text-align: justify">
         <p class="amplify-text" style="color: var(--amplify-colors-red-60) ;font-size: var(--amplify-font-sizes-small)">
-          * Password Requirments: Minimum 8 characters in length and containing at least, 1 Uppercase, 1 Lowercase, 1 Special character 
+          * Password Requirments: Minimum 8  and Maximum of 14 characters  in length and containing at least, 1 Uppercase, 1 Lowercase, 1 Special character & 1 Number
         </p> 
       </div>
     </template>
