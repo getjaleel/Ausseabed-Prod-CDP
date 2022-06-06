@@ -66,12 +66,17 @@
 import { onMounted } from "vue";
 import {
   Authenticator,
-  AuthenticatorSignUpFormFields,
+  AuthenticatorSignUpFormFields,Loader
 } from "@aws-amplify/ui-vue";
 
 import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "./aws-exports";
+
 Amplify.configure(awsconfig);
+import { Loader } from '@aws-amplify/ui-react';
+import './styles.css';
+
+<Loader className="my-loader" />;
 const formFields = {
   signIn: {
     username: {
@@ -145,6 +150,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+/* styles.css */
+.my-loader {
+  width: 5rem;
+  height: 5rem;
 }
 </style>
 
