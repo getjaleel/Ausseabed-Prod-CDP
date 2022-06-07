@@ -25,8 +25,10 @@
       </h3>
     </template>
     
-    <template v-slot:confirm-sign-up-footer>
+    <template v-slot:confirm-sign-up>
       <div style="padding: var(--amplify-space-large); text-align: center">
+      <h1>Foo Bar</h1>
+      <p>Could put a whole bunch of custom text (or anything really) in here.</p>
       <p class="amplify-text" style="color: var(--amplify-colors-red-80)">
       <button @click="signInButton()">Return to Sign In</button>
       </p>
@@ -60,6 +62,9 @@ import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
+
+
+// import './styles.css';
 
 
 
