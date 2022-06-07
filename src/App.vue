@@ -61,7 +61,7 @@ import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
 
-import './styles.css';
+#import './styles.css';
 
 
 const formFields = {
