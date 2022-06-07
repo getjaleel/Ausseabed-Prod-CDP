@@ -27,7 +27,7 @@
     
     <template v-slot:confirm-sign-up>
       <div style="padding: var(--amplify-space-large); text-align: center">
-      <h1>Thankyou for registring with Ausseabed.</h1>
+      <h1>Thankyou for registring with AusSeabed.</h1>
       <p>WATCH OUT FOR THE APPROVAL EMAIL IN YOUR INBOX AND PROCEED TO SIGN IN PAGE WITH SET CREDENTIALS.CLICK ON RETURN TO SIGN IN BUTTON BELOW</p>
       <p class="amplify-text" style="color: var(--amplify-colors-red-80)">
       <button @click="signInButton()">Return to Sign In</button>
